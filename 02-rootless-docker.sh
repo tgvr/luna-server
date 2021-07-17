@@ -7,3 +7,9 @@ sudo mv slirp4netns /usr/local/bin/
 # install rootless docker
 dockerd-rootless-setuptool.sh install
 echo "export DOCKER_HOST=unix:///run/user/1000/docker.sock" >> ~/.zshrc
+
+# expose privileged ports
+sudo su
+echo "net.ipv4.ip_unprivileged_port_start=0" >> /etc/sysctl.conf
+sysctl --system
+exit
