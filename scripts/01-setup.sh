@@ -13,10 +13,15 @@ sed -i 's+ZSH_THEME="robbyrussell"+ZSH_THEME="powerlevel10k/powerlevel10k"+g' ~/
 # install docker
 curl -fsSL https://get.docker.com | sh
 
+# post install steps for docker on linux
+sudo groupadd docker
+sudo usermod -aG docker pi
+newgrp docker
+
 # automount external drive
-sudo su
+sudo su <<EOF
 echo "PARTUUID=83b83299-8d6f-44d8-8025-8135ded2a2a3 /mnt/ext_drive ext4 defaults,noatime,x-systemd.device-timeout=30 0 0" >> /etc/fstab
-exit
+EOF
 
 # cleanup
 sudo apt -y autoremove
