@@ -8,8 +8,8 @@ services:
             - PGID=1000
             - TZ=Asia/Kolkata
         volumes:
-            - ../luna_data/jellyfin/cache:/cache
-            - ../luna_data/jellyfin/config:/config
+            - ../../luna_data/jellyfin/cache:/cache
+            - ../../luna_data/jellyfin/config:/config
             - /mnt/ext_drive/luna_library/media:/media
         ports:
             - 8096:8096
