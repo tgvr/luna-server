@@ -16,6 +16,7 @@ curl -fsSL https://get.docker.com | sh
 # automount external drive
 sudo su
 echo "PARTUUID=83b83299-8d6f-44d8-8025-8135ded2a2a3 /mnt/ext_drive ext4 defaults,noatime,x-systemd.device-timeout=30 0 0" >> /etc/fstab
+exit
 
 # cleanup
 sudo apt -y autoremove
