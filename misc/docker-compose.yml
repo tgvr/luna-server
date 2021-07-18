@@ -1,0 +1,12 @@
+version: "3.9"
+services: 
+    airplay:
+        image: mikebrady/shairport-sync
+        container_name: airplay
+        network_mode: host
+        devices:
+            - "/dev/snd:/dev/snd"
+        volumes:
+            - ../../luna_data/airplay/shairport-sync.conf:/etc/shairport-sync.conf
+        restart: unless-stopped 
+
