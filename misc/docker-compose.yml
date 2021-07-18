@@ -10,3 +10,12 @@ services:
             - ../../luna_data/airplay/shairport-sync.conf:/etc/shairport-sync.conf
         restart: unless-stopped 
 
+    portainer:
+        image: portainer/portainer-ce
+        container_name: portainer
+        ports:
+            - 9000:9000
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+            - ../../luna_data/portainer/data:/data
+        restart: unless-stopped
