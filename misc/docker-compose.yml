@@ -19,3 +19,16 @@ services:
             - /var/run/docker.sock:/var/run/docker.sock
             - /home/pi/luna_data/portainer/data:/data
         restart: unless-stopped
+
+    homer:
+        image: b4bz/homer
+        container_name: homer
+        ports:
+            - 8081:8080
+        environment: 
+            - UID=1000
+            - GID=1000
+        volumes: 
+            - /home/pi/luna_data/homer/assets:/www/assets
+        restart: unless-stopped
+
