@@ -5,6 +5,7 @@ sudo apt install -y restic
 
 # set env variables
 echo "export RESTIC_REPOSITORY='/mnt/ext_drive/luna_backup'" >> ~/.zshrc
+echo "export RESTIC_PASSWORD_FILE='/home/pi/pass/restic'" >> ~/.zshrc
 source ~/.zshrc
 
 ## initialize a restic repo on /mnt/ext_drive
