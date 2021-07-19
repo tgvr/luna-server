@@ -1,53 +1,5 @@
 version: "3.9"
 services: 
-    adguardhome:
-        image: adguard/adguardhome
-        container_name: adguardhome
-        ports:
-            - 53:53/tcp
-            - 53:53/udp
-            - 82:82/tcp
-            - 3000:3000/tcp
-        volumes:
-            - /home/pi/luna_data/adguardhome/work:/opt/adguardhome/work
-            - /home/pi/luna_data/adguardhome/conf:/opt/adguardhome/conf
-        restart: unless-stopped
-
-    jellyfin:
-        image: ghcr.io/linuxserver/jellyfin
-        container_name: jellyfin
-        environment:
-            - PUID=1000
-            - PGID=1000
-            - TZ=Asia/Kolkata
-        volumes:
-            - /home/pi/luna_data/jellyfin/cache:/cache
-            - /home/pi/luna_data/jellyfin/config:/config
-            - /mnt/ext_drive/luna_library/media:/media
-        ports:
-            - 8096:8096
-        restart: unless-stopped
-
-    airplay:
-        image: mikebrady/shairport-sync
-        container_name: airplay
-        network_mode: host
-        devices:
-            - "/dev/snd:/dev/snd"
-        volumes:
-            - /home/pi/luna_data/airplay/shairport-sync.conf:/etc/shairport-sync.conf
-        restart: unless-stopped
-
-    portainer:
-        image: portainer/portainer-ce
-        container_name: portainer
-        ports:
-            - 9000:9000
-        volumes:
-            - /var/run/docker.sock:/var/run/docker.sock
-            - /home/pi/luna_data/portainer/data:/data
-        restart: unless-stopped
-
     qbittorrent:
         image: ghcr.io/linuxserver/qbittorrent
         container_name: qbittorrent
