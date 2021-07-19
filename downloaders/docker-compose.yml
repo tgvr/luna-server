@@ -9,7 +9,7 @@ services:
             - TZ=Asia/Kolkata
             - WEBUI_PORT=8080
         volumes: 
-            - ../../luna_data/qbittorrent/config:/config
+            - /home/pi/luna_data/qbittorrent/config:/config
             - /mnt/ext_drive/luna_library/torrents:/data/torrents
         ports: 
             - 6881:6881
@@ -26,7 +26,7 @@ services:
             - TZ=Asia/Kolkata
             - AUTO_UPDATE=true
         volumes: 
-            - ../../luna_data/jackett/config:/config
+            - /home/pi/luna_data/jackett/config:/config
             - /mnt/ext_drive/luna_library/torrents:/data/torrents
         ports:
             - 9117:9117
@@ -40,7 +40,7 @@ services:
             - PGID=1000
             - TZ=Asia/Kolkata
         volumes:
-            - ../../luna_data/sonarr/config:/config
+            - /home/pi/luna_data/sonarr/config:/config
             - /mnt/ext_drive/luna_library:/data
         ports:
             - 8989:8989
@@ -54,7 +54,7 @@ services:
             - PGID=1000
             - TZ=Asia/Kolkata
         volumes:
-            - ../../luna_data/radarr/config:/config
+            - /home/pi/luna_data/radarr/config:/config
             - /mnt/ext_drive/luna_library:/data
         ports:
             - 7878:7878

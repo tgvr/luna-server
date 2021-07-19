@@ -9,8 +9,8 @@ services:
             - 82:82/tcp
             - 3000:3000/tcp
         volumes: 
-            - ../../luna_data/adguardhome/work:/opt/adguardhome/work
-            - ../../luna_data/adguardhome/conf:/opt/adguardhome/conf
+            - /home/pi/luna_data/adguardhome/work:/opt/adguardhome/work
+            - /home/pi/luna_data/adguardhome/conf:/opt/adguardhome/conf
         restart: unless-stopped
 
 
