@@ -18,6 +18,6 @@ source ~/.zshrc
 sudo -E restic --verbose restore latest --target ~/
 
 # finally, add a cron job that backups luna_data weekly
-sudo cp ../cron/restic-backup.sh /etc/cron.weekly
+sudo cp ../cron/restic-backup.sh /etc/cron.weekly/restic-backup
 
 echo "ADD THE RESTIC REPO PASSWORD IN /home/pi/pass/restic"
